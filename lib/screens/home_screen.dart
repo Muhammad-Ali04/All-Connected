@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:agora_uikit/agora_uikit.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:exd_social_app/controller/signup_controller.dart';
 import 'package:exd_social_app/db/firebase_auth.dart';
@@ -18,6 +19,7 @@ import 'package:get/get.dart';
 import 'package:drop_shadow/drop_shadow.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:lottie/lottie.dart';
+import 'package:app_settings/app_settings.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({
@@ -341,7 +343,9 @@ class _HomeScreenState extends State<HomeScreen>
             InkWell(
               splashColor: Colors.transparent,
               highlightColor: Colors.white,
-              onTap: () {},
+              onTap: () {
+                AppSettings.openAppSettings();
+              },
               child: Container(
                 width: width,
                 margin: EdgeInsets.only(

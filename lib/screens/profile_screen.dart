@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:app_settings/app_settings.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:exd_social_app/controller/profile_controller.dart';
 import 'package:exd_social_app/db/firebase_auth.dart';
@@ -340,7 +341,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             InkWell(
               splashColor: Colors.transparent,
               highlightColor: Colors.white,
-              onTap: () {},
+              onTap: () {
+                AppSettings.openAppSettings();
+              },
               child: Container(
                 width: width,
                 margin: EdgeInsets.only(
