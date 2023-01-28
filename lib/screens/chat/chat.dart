@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
@@ -30,6 +31,39 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   bool _isAttachmentUploading = false;
+
+  String AuthKey =
+      "key=AAAAZnRLdl0:APA91bH4JySFVZHAO8x7K65XJrPf3_el2p-drNECBnjcB-7kChjMN9fGzeweXxTROLQ36PVoGqmwQjPCEzMj8jUQruAcvwDS2wrwcUeahGcdqCgWe6msnjboMbO4sYFJ-00jv9f86Nz8";
+
+  String token =
+      "eusmXktzQ8O9j4RKQl1RRg:APA91bEM627J_pjNxzMSyKO0VZqbzW82CuUeiVZ0fcSiSlcr_-CfhR2O5msreS02mwUkwaGk2thKvky2wqABGbBoeneE6RsjoHzrKK1BFqzePaY6fgN_Dp-hj0u62uw5IibkRBFacsup";
+
+  String otherUserToken =
+      "eusmXktzQ8O9j4RKQl1RRg:APA91bEM627J_pjNxzMSyKO0VZqbzW82CuUeiVZ0fcSiSlcr_-CfhR2O5msreS02mwUkwaGk2thKvky2wqABGbBoeneE6RsjoHzrKK1BFqzePaY6fgN_Dp-hj0u62uw5IibkRBFacsup";
+
+  Future<void> meassageNotification() async {
+    Uri uri = Uri.parse("https://fcm.googleapis.com/fcm/send");
+
+    Map<String, dynamic> body = {
+      "to": token,
+      "notification": {
+        "title": widget.room.name.toString().capitalize,
+        "body": "New Notification"
+      },
+      "data": <String, dynamic>{
+        "room": widget.room,
+        "title": "Title of Notification",
+        "isNOtify": 0
+      }
+    };
+    http.Response response = await http.post(uri,
+        body: jsonEncode(body),
+        headers: <String, String>{
+          "Content-Type": "application/json",
+          "Authorization": AuthKey
+        });
+    print(response.statusCode);
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -248,7 +282,8 @@ class _ChatPageState extends State<ChatPage> {
     FirebaseChatCore.instance.updateMessage(updatedMessage, widget.room.id);
   }
 
-  void _handleSendPressed(types.PartialText message) {
+  void _handleSendPressed(types.PartialText message) async {
+    await meassageNotification();
     FirebaseChatCore.instance.sendMessage(
       message,
       widget.room.id,

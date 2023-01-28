@@ -178,14 +178,16 @@ class _SignupScreenState extends State<SignupScreen> {
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0xff182848),
-                                        strokeAlign: StrokeAlign.outside,
+                                        strokeAlign:
+                                            BorderSide.strokeAlignOutside,
                                         width: 1.5,
                                       ),
                                       borderRadius: BorderRadius.circular(20)),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0xff182848),
-                                        strokeAlign: StrokeAlign.outside,
+                                        strokeAlign:
+                                            BorderSide.strokeAlignOutside,
                                         width: 1.5,
                                       ),
                                       borderRadius: BorderRadius.circular(20)),
@@ -239,14 +241,16 @@ class _SignupScreenState extends State<SignupScreen> {
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0xff182848),
-                                        strokeAlign: StrokeAlign.outside,
+                                        strokeAlign:
+                                            BorderSide.strokeAlignOutside,
                                         width: 1.5,
                                       ),
                                       borderRadius: BorderRadius.circular(20)),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0xff182848),
-                                        strokeAlign: StrokeAlign.outside,
+                                        strokeAlign:
+                                            BorderSide.strokeAlignOutside,
                                         width: 1.5,
                                       ),
                                       borderRadius: BorderRadius.circular(20)),
@@ -315,14 +319,16 @@ class _SignupScreenState extends State<SignupScreen> {
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0xff182848),
-                                        strokeAlign: StrokeAlign.outside,
+                                        strokeAlign:
+                                            BorderSide.strokeAlignOutside,
                                         width: 1.5,
                                       ),
                                       borderRadius: BorderRadius.circular(20)),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0xff182848),
-                                        strokeAlign: StrokeAlign.outside,
+                                        strokeAlign:
+                                            BorderSide.strokeAlignOutside,
                                         width: 1.5,
                                       ),
                                       borderRadius: BorderRadius.circular(20)),
@@ -376,14 +382,16 @@ class _SignupScreenState extends State<SignupScreen> {
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0xff182848),
-                                        strokeAlign: StrokeAlign.outside,
+                                        strokeAlign:
+                                            BorderSide.strokeAlignOutside,
                                         width: 1.5,
                                       ),
                                       borderRadius: BorderRadius.circular(20)),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0xff182848),
-                                        strokeAlign: StrokeAlign.outside,
+                                        strokeAlign:
+                                            BorderSide.strokeAlignOutside,
                                         width: 1.5,
                                       ),
                                       borderRadius: BorderRadius.circular(20)),

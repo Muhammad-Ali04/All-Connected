@@ -239,21 +239,22 @@ class _CommentsScreenState extends State<CommentsScreen> {
                             maxLines: null,
                             controller: commentController,
                             decoration: InputDecoration(
-                                focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(40.0),
-                                    borderSide:
-                                        BorderSide(color: Color(0xff182848))),
-                                contentPadding: EdgeInsets.only(
-                                    top: height * 0.01, left: width * 0.03),
-                                constraints:
-                                    BoxConstraints(maxHeight: height * 0.05),
-                                border: OutlineInputBorder(
+                              focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(40.0),
-                                ),
-                                filled: true,
-                                fillColor: Color.fromARGB(96, 158, 158, 158),
-                                hintText: "Add Comment",
-                                hintStyle: TextStyle(fontFamily: "Ubuntu")),
+                                  borderSide:
+                                      BorderSide(color: Color(0xff182848))),
+                              contentPadding: EdgeInsets.only(
+                                  top: height * 0.01, left: width * 0.03),
+                              constraints:
+                                  BoxConstraints(maxHeight: height * 0.05),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(40.0),
+                              ),
+                              filled: true,
+                              fillColor: Color.fromARGB(96, 158, 158, 158),
+                              hintText: "Add Comment",
+                              hintStyle: TextStyle(fontFamily: "Ubuntu"),
+                            ),
                           ),
                         ),
                         InkWell(

@@ -1,3 +1,4 @@
+import 'package:exd_social_app/screens/chat/chat.dart';
 import 'package:exd_social_app/screens/chat/login.dart';
 import 'package:exd_social_app/screens/home_screen.dart';
 import 'package:exd_social_app/screens/loaction_screen.dart';
@@ -9,10 +10,23 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+getFCMToken() async {
+  String? token = await FirebaseMessaging.instance.getToken();
+  print("FCMToken : $token");
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await FirebaseMessaging.instance.getToken();
+
+  Future<void> _firebaseMessagingBackgroundHandler(
+      RemoteMessage message) async {
+    await Firebase.initializeApp();
+    print("Handling a background message: ${message.messageId}");
+  }
+
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  await getFCMToken();
   runApp(const MyApp());
 }
 
@@ -44,6 +58,19 @@ class _MyAppState extends State<MyApp> {
       print('Message data: ${message.data}');
 
       if (message.notification != null) {
+        Map<String, dynamic> data = message.data;
+        Get.snackbar(
+          onTap: (snack) {
+            if (data["isNotify"] == 0) {
+              Get.to(ChatPage(
+                room: data["room"],
+              ));
+            }
+          },
+          "${message.notification!.title.toString()}",
+          "${message.notification!.body.toString()}",
+        );
+
         print('Message also contained a notification: ${message.notification}');
       }
     });

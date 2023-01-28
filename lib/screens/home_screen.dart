@@ -476,13 +476,15 @@ class _HomeScreenState extends State<HomeScreen>
                                     borderSide: BorderSide(
                                         width: 1,
                                         color: Color(0xff4B6CB7),
-                                        strokeAlign: StrokeAlign.center)),
+                                        strokeAlign:
+                                            BorderSide.strokeAlignCenter)),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(20),
                                     borderSide: BorderSide(
                                         width: 1,
                                         color: Color(0xff4B6CB7),
-                                        strokeAlign: StrokeAlign.center)),
+                                        strokeAlign:
+                                            BorderSide.strokeAlignCenter)),
                                 constraints: BoxConstraints(
                                   maxHeight: height * 0.042,
                                   maxWidth: width * 0.64,
