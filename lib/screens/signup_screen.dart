@@ -87,7 +87,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                           Color.fromARGB(255, 0, 0, 0),
                                       child: CircleAvatar(
                                         radius: 57,
-                                        foregroundImage:
+                                        backgroundImage:
                                             FileImage(_.profilepic!),
                                       ),
                                     ),
@@ -99,7 +99,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                           Color.fromARGB(255, 0, 0, 0),
                                       child: CircleAvatar(
                                         radius: 57,
-                                        foregroundImage: AssetImage(
+                                        backgroundImage: AssetImage(
                                             "assets/images/person.jpeg"),
                                       ),
                                     ),
@@ -435,7 +435,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   _.clearName();
                                   _.clearPassword();
                                   _.clearPhoneNumber();
-                                  await _.getProfileImage();
+                                  // await _.getProfileImage();
                                   Get.to(LoginScreen(),
                                       transition: Transition.leftToRight);
                                 }

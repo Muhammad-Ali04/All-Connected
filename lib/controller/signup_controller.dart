@@ -30,9 +30,7 @@ class SignupController extends GetxController {
       profilepic = File(profileCrop!.path);
       update();
     }
-  }
 
-  getProfileImage() {
     String imageName = DateTime.now().millisecondsSinceEpoch.toString();
     File? filePath = File(profilepic!.path);
 
@@ -61,6 +59,10 @@ class SignupController extends GetxController {
       );
     } catch (e) {}
   }
+
+  // getProfileImage() {
+
+  // }
 
   var nameController = TextEditingController();
   var emailController = TextEditingController();
