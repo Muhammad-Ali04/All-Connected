@@ -469,7 +469,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           splashColor: Colors.transparent,
                           onTap: () async {
                             _controller.coverPicPickerAndCrop();
-                            await _controller.getCoverPic();
+                            // await _controller.getCoverPic();
                           },
                           child: Container(
                             margin: EdgeInsets.only(
@@ -732,7 +732,200 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          Get.bottomSheet(
+                                              Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: width * 0.02,
+                                                      right: width * 0.02,
+                                                      bottom: height * 0.03),
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.white,
+                                                      borderRadius:
+                                                          BorderRadius.only(
+                                                              topLeft: Radius
+                                                                  .circular(12),
+                                                              topRight: Radius
+                                                                  .circular(12),
+                                                              bottomLeft: Radius
+                                                                  .circular(12),
+                                                              bottomRight: Radius
+                                                                  .circular(
+                                                                      12)),
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                            color: Color(
+                                                                0xff182848),
+                                                            blurStyle:
+                                                                BlurStyle.solid,
+                                                            blurRadius: 1,
+                                                            offset:
+                                                                Offset(0, 0),
+                                                            spreadRadius: 1)
+                                                      ]),
+                                                  child: Column(
+                                                    children: [
+                                                      Container(
+                                                        margin: EdgeInsets.only(
+                                                            top: height * 0.03),
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Text(
+                                                              data.name,
+                                                              style: TextStyle(
+                                                                  fontFamily:
+                                                                      "Ubuntu",
+                                                                  fontSize: 22,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
+                                                            ),
+                                                            Container(
+                                                              child: Icon(
+                                                                Icons
+                                                                    .male_rounded,
+                                                                size: 22,
+                                                                color: Color(
+                                                                    0xff4B6CB7),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Container(
+                                                        margin: EdgeInsets.only(
+                                                            left: width * 0.01,
+                                                            top: height * 0.03),
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Container(
+                                                              child: Icon(
+                                                                Icons.mail,
+                                                                size: 16,
+                                                                color: Color(
+                                                                    0xff182848),
+                                                              ),
+                                                            ),
+                                                            SizedBox(
+                                                              width:
+                                                                  width * 0.02,
+                                                            ),
+                                                            Container(
+                                                                child: Text(
+                                                              data.metadata
+                                                                  .email,
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    "Ubuntu",
+                                                                fontSize: 15,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400,
+                                                                color: Color(
+                                                                    0xff4B6CB7),
+                                                              ),
+                                                            )),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Container(
+                                                        margin: EdgeInsets.only(
+                                                            left: width * 0.01,
+                                                            top: height * 0.03),
+                                                        child: Row(
+                                                          children: [
+                                                            Container(
+                                                              child: Icon(
+                                                                Icons.phone,
+                                                                size: 16,
+                                                                color: Color(
+                                                                    0xff182848),
+                                                              ),
+                                                            ),
+                                                            SizedBox(
+                                                              width:
+                                                                  width * 0.02,
+                                                            ),
+                                                            Container(
+                                                                child: Text(
+                                                              data.metadata
+                                                                  .phoneNumber,
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    "Ubuntu",
+                                                                fontSize: 15,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400,
+                                                                color: Color(
+                                                                    0xff4B6CB7),
+                                                              ),
+                                                            )),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Container(
+                                                        margin: EdgeInsets.only(
+                                                            left: width * 0.01,
+                                                            top: height * 0.03),
+                                                        child: Row(
+                                                          children: [
+                                                            Container(
+                                                              child: Icon(
+                                                                Icons
+                                                                    .location_on,
+                                                                size: 16,
+                                                                color: Color(
+                                                                    0xff182848),
+                                                              ),
+                                                            ),
+                                                            SizedBox(
+                                                              width:
+                                                                  width * 0.02,
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Container(
+                                                        margin: EdgeInsets.only(
+                                                            left: width * 0.01,
+                                                            top: height * 0.03),
+                                                        child: Row(
+                                                          children: [
+                                                            Container(
+                                                                child: Text(
+                                                              "Bio:",
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    "Ubuntu",
+                                                                fontSize: 15,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color: Color(
+                                                                    0xff182848),
+                                                              ),
+                                                            )),
+                                                            SizedBox(
+                                                              width:
+                                                                  width * 0.02,
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )),
+                                              isDismissible: true,
+                                              enableDrag: true,
+                                              barrierColor: Color.fromARGB(
+                                                  108, 158, 158, 158));
+                                        },
                                         child: Container(
                                           child: Text(
                                             "More Info",

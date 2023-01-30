@@ -17,7 +17,7 @@ class UserModel {
     // email = documentSnapshot['email'] ?? " ";
     // phoneNumber = documentSnapshot['phone'] ?? " ";
     imageUrl = documentSnapshot['imageUrl'] ?? " ";
-    // coverPic = documentSnapshot['coverImageUrl'] ?? "";
+    // coverPic = documentSnapshot['coverPic'] ?? "";
   }
 
   UserModel.fromjson(
@@ -29,7 +29,7 @@ class UserModel {
     // userId = data["uid"] ?? "";
     // phoneNumber = data['phone'] ?? "";
     imageUrl = data['imageUrl'] ?? "";
-    // coverPic = data['coverImageUrl'] ?? "";
+    // coverPic = data['coverPic'] ?? "";
   }
 
   late final String name;
@@ -46,7 +46,7 @@ class UserModel {
     // data['phone'] = this.phoneNumber;
     data['imageUrl'] = this.imageUrl;
     data['metadata'] = this.metadata.tojson();
-    // data['coverImageUrl'] = this.coverPic;
+    // data['coverPic'] = this.coverPic;
     return data;
   }
 }
@@ -54,6 +54,7 @@ class UserModel {
 class metaData {
   late final String email;
   late final String phoneNumber;
+  // late final String coverPic;
   metaData({
     required this.email,
     required this.phoneNumber,
@@ -65,17 +66,20 @@ class metaData {
     email = data['email'] ?? "";
 
     phoneNumber = data['phone'] ?? "";
+    // coverPic = data['coverPic'] ?? "";
   }
 
   Map<String, dynamic> tojson() {
     final Map<String, dynamic> data = Map<String, Object>();
     data['email'] = this.email;
     data['phone'] = this.phoneNumber;
+    // data['coverPic'] = this.coverPic;
     return data;
   }
 
   metaData.fromDocumentSnapshot(DocumentSnapshot documentSnapshot) {
     email = documentSnapshot['email'];
     phoneNumber = documentSnapshot['phone'];
+    // coverPic = documentSnapshot['coverPic'];
   }
 }

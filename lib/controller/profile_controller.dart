@@ -25,36 +25,38 @@ class ProfileController extends GetxController {
     if (covereCrop != null) {
       coverPic = File(covereCrop!.path);
       update();
+
+      String imageName = DateTime.now().millisecondsSinceEpoch.toString();
+      File? filePath = File(coverPic!.path);
+
+      try {
+        firebase_storage.UploadTask? uploadPic;
+        firebase_storage.Reference reference = firebase_storage
+            .FirebaseStorage.instance
+            .ref()
+            .child("coverPic")
+            .child("/$imageName");
+
+        uploadPic = reference.putFile(filePath);
+        Future.value(uploadPic).then(
+          (value) async {
+            coverImageUrl = await reference.getDownloadURL();
+            print(coverImageUrl);
+
+            String? uid;
+
+            uid = currentUser!.uid;
+
+            DocumentReference user =
+                FirebaseFirestore.instance.collection("users").doc(uid);
+            await user.update({"coverPic": coverImageUrl});
+          },
+        );
+      } catch (e) {}
     }
   }
 
-  getCoverPic() {
-    String imageName = DateTime.now().millisecondsSinceEpoch.toString();
-    File? filePath = File(coverPic!.path);
+  // getCoverPic() {
 
-    try {
-      firebase_storage.UploadTask? uploadPic;
-      firebase_storage.Reference reference = firebase_storage
-          .FirebaseStorage.instance
-          .ref()
-          .child("coverPic")
-          .child("/$imageName");
-
-      uploadPic = reference.putFile(filePath);
-      Future.value(uploadPic).then(
-        (value) async {
-          coverImageUrl = await reference.getDownloadURL();
-          print(coverImageUrl);
-
-          String? uid;
-
-          uid = currentUser!.uid;
-
-          DocumentReference user =
-              FirebaseFirestore.instance.collection("user").doc(uid);
-          await user.update({"coverImageUrl": coverImageUrl});
-        },
-      );
-    } catch (e) {}
-  }
+  // }
 }
